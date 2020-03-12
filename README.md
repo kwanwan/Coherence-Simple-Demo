@@ -16,14 +16,14 @@ To run the demonstration application, you must have the following software insta
 
 1. Java 8 or 11 SE Development Kit or Runtime environment.
 
-  You can download JDK 8 from:
+    You can download JDK 8 from:
 
-  - [Java SE Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-  - [Java SE Runtime Environment](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
+    - [Java SE Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+    - [Java SE Runtime Environment](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
 
   You can download JDK 11 from:
 
-    - [Java SE Development Kit 11 Downloads](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html)
+      - [Java SE Development Kit 11 Downloads](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html)
 
 
 2. Oracle Coherence 12.2.1.3.0 or later version installed. This demo application has been tested to run on 12.2.1.3.0.
@@ -40,17 +40,19 @@ Ensure the following environment variable is set in your configuration:
 
 1. JAVA_HOME -- This variable must point to the location of the JDK version supported by the Oracle Coherence version that you use. Ensure that the path is set accordingly:
 
-  For Linux/UNIX OS:
-```
-export PATH=$JAVA_HOME/bin:$PATH
-```
+    For Linux/UNIX OS:
+
+    ```
+    export PATH=$JAVA_HOME/bin:$PATH
+    ```
 
 2. COHERENCE_HOME -- This variable must point to the Coherence directory of your Coherence installation. This is required for starting the Coherence servers.
 
-  For example:
-```
-export COHERENCE_HOME=/opt/Oracle/Middleware/Oracle_Home/Coherence
-```
+    For example:
+
+    ```
+    export COHERENCE_HOME=/opt/Oracle/Middleware/Oracle_Home/Coherence
+    ```
 
 ## Configure and Start a Cluster ##
 
@@ -58,21 +60,21 @@ export COHERENCE_HOME=/opt/Oracle/Middleware/Oracle_Home/Coherence
 
 1. Download the demo application here:
 
-  ```
-  curl -LSs https://raw.githubusercontent.com/kwanwan/Coherence-Simple-Demo/master//cachemap.war
-  ```
+    ```
+    curl -LSs https://raw.githubusercontent.com/kwanwan/Coherence-Simple-Demo/master//cachemap.war
+    ```
 
 2. Unzip the `cachemap.war` into your working directory.
 
-  ```
-  jar -xvd cachemap.war
-  ```
+    ```
+    jar -xvd cachemap.war
+    ```
 
 3. Change into the `classes` directory where `example-config.xml` and `tangosol-coherence-override.xml` are located.
 
-  ```
-  cd WEB-INF/classes
-  ```
+    ```
+    cd WEB-INF/classes
+    ```
 
 
 ### Define a Cache ###
