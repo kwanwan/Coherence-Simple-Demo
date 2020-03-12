@@ -28,7 +28,7 @@ To run the demonstration application, you must have the following software insta
 
 2. Oracle Coherence 12.2.1.3.0 or later version installed. This demo application has been tested to run on 12.2.1.3.0.
 
-  You can download it from https://www.oracle.com/middleware/technologies/coherence-archive-downloads.html.
+    You can download it from https://www.oracle.com/middleware/technologies/coherence-archive-downloads.html.
 
 3. An application sever such as WebLogic Server. This demo application has been tested to run on WebLogic Server 12.2.1.3.0.
 
