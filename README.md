@@ -11,7 +11,6 @@ The steps below will not cover the deployment of the demo Web application to an 
 
 ## Prerequisites ##
 
-### General Prerequisites ###
 To run the demonstration application, you must have the following software installed:
 
 1. Java 8 or 11 SE Development Kit or Runtime environment.
@@ -54,6 +53,15 @@ Ensure the following environment variable is set in your configuration:
     export COHERENCE_HOME=/opt/Oracle/Middleware/Oracle_Home/Coherence
     ```
 
+## Known Issues ##
+
+The demo Web application has been tested to run on Oracle Coherence 12.2.1.3.0.
+
+However, it does not work with Coherence 12.2.1.4.0. The application is unable to override the default configuration with the `demo` cluster name defined in the `tangosol-coherence-override.xml`.
+
+It is possible to make the application run in Coherence 12.2.1.3.4.0 by using the default automatically generated cluster name. The default cluster name uses your operating system user ID.
+
+
 ## Configure and Start a Cluster ##
 
 ### Prepare The Application ###
@@ -61,7 +69,8 @@ Ensure the following environment variable is set in your configuration:
 1. Download the demo application here:
 
     ```
-    curl -LSs https://raw.githubusercontent.com/kwanwan/Coherence-Simple-Demo/master//cachemap.war
+    curl -LSs https://github.com/kwanwan/Coherence-Simple-Demo/blob/master/src/main/webapp/cachemap.war?raw=true > cachemap.war
+
     ```
 
 2. Unzip the `cachemap.war` into your working directory.
@@ -82,7 +91,7 @@ Ensure the following environment variable is set in your configuration:
 Caches are defined in a cache configuration deployment descriptor and are referred to by name within an application. The cache configuration file allows changes to be made to a cache without having to change an application's code. The following cache configuration defines a basic distributed cache which is mapped to the cache name '`demo`'.
 
 
-The cache is defined in an XML file named `example-config.xml` and we have one defined for you already [example-config.xml](https://github.com/kwanwan/Coherence-Simple-Demo/src/main/webapp/WEB-INF/classes/example-config.xml):
+The cache is defined in an XML file named `example-config.xml` and we have one defined for you already [example-config.xml](https://github.com/kwanwan/Coherence-Simple-Demo/blob/master/src/main/webapp/WEB-INF/classes/example-config.xml):
 
 
 ```
@@ -123,7 +132,7 @@ Caches are hosted on a Coherence cluster. At run time, any JVM process that is r
 The cache server, by default, is configured to store cache data.
 The demo cluster uses an operational override file to modify the out-of-box default cluster configuration. In particular, the default configuration is modified to create a private cluster which ensures that the two processes do not attempt to join an existing Coherence cluster that may be running on the network. The default configuration is also modified to load the `example-config.xml` cache configuration file instead of the default cache configuration file.
 
-To configure and start the demo cluster you will need a `tangosol-coherence-override.xml` which we have defined one for you already. [tangosol-coherence-override.xml](https://github.com/kwanwan/Coherence-Simple-Demo/src/main/webapp/WEB-INF/classes/tangosol-coherence-override.xml).
+To configure and start the demo cluster you will need a `tangosol-coherence-override.xml` which we have defined one for you already. [tangosol-coherence-override.xml](https://github.com/kwanwan/Coherence-Simple-Demo/blob/master/src/main/webapp/WEB-INF/classes/tangosol-coherence-override.xml).
 
 ```
 
@@ -374,15 +383,15 @@ To verify the cache:
 
 2. At the command-line tool command prompt, retrieve the contents of the cache using the list command.
 
-  ```
-  list
-  ```
+    ```
+    list
+    ```
 
 3. The content of the cache should be the same as display in the Web demo application.
 
-  ```
-  Map (demo): list
-  k2 = Bye Bye
-  ```
+    ```
+    Map (demo): list
+    k2 = Bye Bye
+    ```
 
 ## Congratulation - You have successful completed the demo !! ##
