@@ -21,7 +21,7 @@ To run the demonstration application, you must have the following software insta
     - [Java SE Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
     - [Java SE Runtime Environment](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
 
-  You can download JDK 11 from:
+    You can download JDK 11 from:
 
       - [Java SE Development Kit 11 Downloads](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html)
 
@@ -208,24 +208,24 @@ To verify the cache:
 
 1.  From a command prompt, start a standalone cache factory instance using the CacheFactory class and include the location of the `coherence.jar` library and the configuration files as a Java `-cp` option.
 
-  For example:
+    For example:
 
-  ```
-  java -cp "$COHERENCE_HOME/lib/coherence.jar:." -Dcoherence.distributed.localstorage=false com.tangosol.net.CacheFactory
+    ```
+    java -cp "$COHERENCE_HOME/lib/coherence.jar:." -Dcoherence.distributed.localstorage=false com.tangosol.net.CacheFactory
 
-  ```
+    ```
 
-  The cache factory instance starts and becomes a member of the cluster and returns a command prompt for the command-line tool similar to below.
+    The cache factory instance starts and becomes a member of the cluster and returns a command prompt for the command-line tool similar to below.
 
-  ```
-  2020-03-12 11:40:27.237/3.161 Oracle Coherence GE 12.2.1.4.0 <Info> (thread=Invocation:Management, member=2): Service Management joined the cluster with senior service member 1
-  2020-03-12 11:40:27.276/3.200 Oracle Coherence GE 12.2.1.4.0 <Info> (thread=main, member=2): Loaded Reporter configuration from "jar:file:/Users/Kwan/opt/oracle/wls214/coherence/lib/coherence.jar!/reports/report-group.xml"
+    ```
+    2020-03-12 11:40:27.237/3.161 Oracle Coherence GE 12.2.1.4.0 <Info> (thread=Invocation:Management, member=2): Service Management joined the cluster with senior service member 1
+    2020-03-12 11:40:27.276/3.200 Oracle Coherence GE 12.2.1.4.0 <Info> (thread=main, member=2): Loaded Reporter configuration from "jar:file:/Users/Kwan/opt/oracle/wls214/coherence/lib/coherence.jar!/reports/report-group.xml"
 
-  Map (?):
+    Map (?):
 
-  ```
+    ```
 
-  Please take note of the cluster joining as `member=2`.
+    Please take note of the cluster joining as `member=2`.
 
 
 2. At the command-line tool command prompt, get the `demo` cache using the cache command:
