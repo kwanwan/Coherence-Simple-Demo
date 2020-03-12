@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Oracle Coherence Cache</title>
+</head>
+
+
+<style>
+  body {
+    font-family: Arial;
+  	font-size: 15pt;
+  }
+  input[type=button], input[type=submit], input[type=reset] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 15pt;
+    font-weight: bold;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  input[type=text] {
+    border: 1px solid grey;
+    border-radius: 4px;
+    height: 30px;
+    font-size:15pt;
+  }
+  textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+  }
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+</style>
+
+
+<body onload="load()">
+<div id="myForm">
+<h1>Oracle Coherence Cache</h1>
+<br><br>
+<h2>Add new entry</h3>
+  <form name="addForm" action="addentry.jsp" onsubmit="return addentryrequired()" method="post">
+		<table style="with: 50%">
+			<tr>
+				<td>Key:</td>
+				<td><input type="text" name="key" onfocus="this.value=''"></td>
+			</tr>
+			<tr>
+				<td>Value:</td>
+				<td><input type="text" name="val" onfocus="this.value=''"> </td>
+        <td><input type="submit" value="Add Entry" /></td>
+			</tr>
+    </table>
+  </form>
+
+  <br><br>
+
+  <h2>Delete an entry</h2>
+
+  <form name="deleteForm" action="deleteentry.jsp" onsubmit="return deleteentryrequired()" method="post">
+		<table style="with: 50%">
+			<tr>
+				<td>Key:</td>
+				<td><input type="text" name="key" onfocus="this.value=''"></td>
+        <td><input type="submit" value="Delete Entry"></td>
+			</tr>
+    </table>
+    <br><br>
+  </form>
+
+
+  <h2>Display cache content</h2>
+  <form action="displaycache.jsp" method="post">
+    <!-- button display cache content -->
+    <input type="submit" value="Display Cache" />
+  </form>
+
+</body>
+</html>
+
+<script>
+
+function addentryrequired() {
+
+// function to validate field
+
+	var key = document.forms["addForm"]["key"].value;
+  var value = document.forms["addForm"]["val"].value;
+
+  // test for an empty field
+	if (key == "") {
+		alert("Must enter an Key");
+    document.forms["addForm"]["key"].focus();
+  	return false;
+  }
+
+  if (value == "") {
+    alert("Must enter an Value");
+    document.forms["addForm"]["val"].focus();
+    return false;
+  }
+}
+
+
+function deleteentryrequired() {
+
+// function to validate field
+
+	var key = document.forms["deleteForm"]["key"].value;
+
+  // test for an empty field
+	if (key == "") {
+		alert("Must enter an Key");
+    document.forms["deleteForm"]["key"].focus();
+  	return false;
+  }
+}
+
+</script>
