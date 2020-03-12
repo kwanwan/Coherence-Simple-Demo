@@ -230,37 +230,37 @@ To verify the cache:
 
 2. At the command-line tool command prompt, get the `demo` cache using the cache command:
 
-  ```
-  cache demo
-  ```
+    ```
+    cache demo
+    ```
 
-  You cache view should be in demo as below:
+    You cache view should be in demo as below:
 
-  ```
-  Map (demo):
-  ```
+    ```
+    Map (demo):
+    ```
 
 3. At the command-line tool command prompt, retrieve the contents of the cache using the list command.
 
-  ```
-  list
-  ```
+    ```
+    list
+    ```
 
-  The command returns null as there is nothing in the cache yet.
+    The command returns null as there is nothing in the cache yet.
 
-  Let's load an entry into the cache using the `put` command with first parameter as the key and the value as the second parameter.
+    Let's load an entry into the cache using the `put` command with first parameter as the key and the value as the second parameter.
 
-  ```
-  Map (demo): put k1 "Hello World!"
-  null
-  ```
+    ```
+    Map (demo): put k1 "Hello World!"
+    null
+    ```
 
 4. Now, retrieve the contents of the cache again using the list command.
 
-  ```
-  Map (demo): list
-  k1 = Hello World!
-  ```
+    ```
+    Map (demo): list
+    k1 = Hello World!
+    ```
 
 #### We now have a working Coherence cache with two members in a cluster. ####
 
@@ -279,35 +279,35 @@ With the Coherence cache verified, we can now repackage the WAR file with the ch
 
 1. Go to your webapp working directory and run the following to create a new WAR file:
 
-  ```
-  jar cvf cachemap.war *
-  ```
+    ```
+    jar cvf cachemap.war *
+    ```
 
 2. Verify the content of your WAR by running the following:
 
-  ```
-  jar cvt cachemap.war
-  ```
+    ```
+    jar cvt cachemap.war
+    ```
 
-  and you have something similar to below:
+    and you have something similar to below:
 
-  ```
-  $ jar tvf cachemap.war
-       0 Mon Mar 09 12:27:24 HKT 2020 META-INF/
-      69 Mon Mar 09 12:27:24 HKT 2020 META-INF/MANIFEST.MF
-       0 Thu Mar 05 13:36:46 HKT 2020 WEB-INF/
-       0 Fri Mar 06 09:31:46 HKT 2020 WEB-INF/classes/
-     804 Mon Mar 09 12:09:46 HKT 2020 WEB-INF/classes/example-config.xml
-     885 Thu Mar 05 20:55:30 HKT 2020 WEB-INF/classes/tangosol-coherence-override.xml
-       0 Thu Mar 05 13:36:48 HKT 2020 WEB-INF/lib/
-  13490976 Thu Sep 12 01:12:34 HKT 2019 WEB-INF/lib/coherence.jar
-      39 Thu Mar 05 13:33:52 HKT 2020 WEB-INF/web.xml
-    2173 Mon Mar 09 12:26:20 HKT 2020 addentry.jsp
-    2665 Mon Mar 09 12:27:08 HKT 2020 cachemap.html
-    2187 Mon Mar 09 12:23:02 HKT 2020 deleteentry.jsp
-    1985 Mon Mar 09 12:22:50 HKT 2020 displaycache.jsp
+    ```
+    $ jar tvf cachemap.war
+         0 Mon Mar 09 12:27:24 HKT 2020 META-INF/
+        69 Mon Mar 09 12:27:24 HKT 2020 META-INF/MANIFEST.MF
+         0 Thu Mar 05 13:36:46 HKT 2020 WEB-INF/
+         0 Fri Mar 06 09:31:46 HKT 2020 WEB-INF/classes/
+       804 Mon Mar 09 12:09:46 HKT 2020 WEB-INF/classes/example-config.xml
+       885 Thu Mar 05 20:55:30 HKT 2020 WEB-INF/classes/tangosol-coherence-override.xml
+         0 Thu Mar 05 13:36:48 HKT 2020 WEB-INF/lib/
+    13490976 Thu Sep 12 01:12:34 HKT 2019 WEB-INF/lib/coherence.jar
+        39 Thu Mar 05 13:33:52 HKT 2020 WEB-INF/web.xml
+      2173 Mon Mar 09 12:26:20 HKT 2020 addentry.jsp
+      2665 Mon Mar 09 12:27:08 HKT 2020 cachemap.html
+      2187 Mon Mar 09 12:23:02 HKT 2020 deleteentry.jsp
+      1985 Mon Mar 09 12:22:50 HKT 2020 displaycache.jsp
 
-  ```
+    ```
 
 ### Deploying and Running The Demo Application ###
 
@@ -317,47 +317,47 @@ To deploy and run the demo application example:
 
 2. From a browser, run the Cache Map application by accessing the `cachemap.html` file using the following URL. Substitute host and port with values specific to the deployment.
 
-  ```
-  http://host:port/cachemap/cachemap.jsp
+    ```
+    http://host:port/cachemap/cachemap.jsp
 
-  ```
+    ```
 
-  The Cache Map application starts. A cache factory instance is created in the JSPs and becomes a member of the cluster when loaded. You should see a page similar to below once loaded:
+    The Cache Map application starts. A cache factory instance is created in the JSPs and becomes a member of the cluster when loaded. You should see a page similar to below once loaded:
 
-  ![alt text](images/image01.png)
+    ![alt text](images/image01.png)
 
 In this simple application you can upload new entries to the cache as key value pairs. Delete an entry and also display the entries in the cache.
 
 3. Display the cache by clicking on **Display Cache**. You should see the entry you previously added to the cache through the command-tool tool. This invokes the Coherence **get()** API to retrieve the entries.
 
-  ![alt text](images/image02.png)
+    ![alt text](images/image02.png)
 
-  Click **Return**
+    Click **Return**
 
-  When the JSP is loaded, it will instantiate a Coherence session and joins the running `demo` cluster as member 3. You should see output in the first cache server instance you started using the **DefaultCacheServer** class similar to below:
+    When the JSP is loaded, it will instantiate a Coherence session and joins the running `demo` cluster as member 3. You should see output in the first cache server instance you started using the **DefaultCacheServer** class similar to below:
 
-  ```
-  2020-03-12 12:22:12.176/187.109 Oracle Coherence GE 12.2.1.3.0 <D5> (thread=Invocation:Management, member=3): Service Management joined the cluster with senior service member 1
+    ```
+    2020-03-12 12:22:12.176/187.109 Oracle Coherence GE 12.2.1.3.0 <D5> (thread=Invocation:Management, member=3): Service Management joined the cluster with senior service member 1
 
-  ```
+    ```
 
 4. Try uploading a new entry by entering the key value pair and then click on **Add Entry**. This invokes the Coherence **put()** API to upload the entry.
 
-  ![alt text](images/image03.png)
+    ![alt text](images/image03.png)
 
-  The cache content will be displayed after a successful upload.
+    The cache content will be displayed after a successful upload.
 
-  ![alt text](images/image04.png)
+    ![alt text](images/image04.png)
 
-  Click **Return**
+    Click **Return**
 
 5. Now try deleting a existing entry by entering the key of an existing entry and then click on **Delete Entry**. This invokes the Coherence **remove()** API to delete an entry.
 
-  ![alt text](images/image05.png)
+    ![alt text](images/image05.png)
 
-  Again, if successful, the cache content will be refreshed.
+    Again, if successful, the cache content will be refreshed.
 
-  ![alt text](images/image06.png)
+    ![alt text](images/image06.png)
 
 
 ### Verify The Demo Cache ###
@@ -374,15 +374,15 @@ To verify the cache:
 
 2. At the command-line tool command prompt, retrieve the contents of the cache using the list command.
 
-```
-list
-```
+  ```
+  list
+  ```
 
 3. The content of the cache should be the same as display in the Web demo application.
 
-```
-Map (demo): list
-k2 = Bye Bye
-```
+  ```
+  Map (demo): list
+  k2 = Bye Bye
+  ```
 
 ## Congratulation - You have successful completed the demo !! ##
