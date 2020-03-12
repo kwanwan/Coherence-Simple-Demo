@@ -387,7 +387,7 @@ To verify the cache:
     list
     ```
 
-3. The content of the cache should be the same as display in the Web demo application.
+3. The content of the cache should be the same as displayed in the Web demo application.
 
     ```
     Map (demo): list
