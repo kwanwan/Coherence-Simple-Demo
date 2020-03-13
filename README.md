@@ -327,7 +327,7 @@ To deploy and run the demo application example:
 2. From a browser, run the Cache Map application by accessing the `cachemap.html` file using the following URL. Substitute host and port with values specific to the deployment.
 
     ```
-    http://host:port/cachemap/cachemap.jsp
+    http://host:port/cachemap/cachemap.html
 
     ```
 
