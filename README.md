@@ -295,7 +295,7 @@ With the Coherence cache verified, we can now repackage the WAR file with the ch
 2. Verify the content of your WAR by running the following:
 
     ```
-    jar cvt cachemap.war
+    jar tvf cachemap.war
     ```
 
     and you have something similar to below:
