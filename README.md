@@ -337,7 +337,7 @@ To deploy and run the demo application example:
 
 In this simple application you can upload new entries to the cache as key value pairs. Delete an entry and also display the entries in the cache.
 
-3. Display the cache by clicking on **Display Cache**. You should see the entry you previously added to the cache through the command-tool tool. This invokes the Coherence **get()** API to retrieve the entries.
+3. Display the cache by clicking on **Display Cache**. You should see the entry you previously added to the cache through the command-line tool. This invokes the Coherence **get()** API to retrieve the entries.
 
     ![alt text](images/image02.png)
 
